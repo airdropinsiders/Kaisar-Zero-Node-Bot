@@ -1,4 +1,4 @@
-# KAISAR ZERO NOODE BOT
+# KAISAR ZERO NETWORK NODE BOT
 
 Your compute, your currency
 Transform your compute power into real earnings
