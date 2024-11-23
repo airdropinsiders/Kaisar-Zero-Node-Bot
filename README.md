@@ -63,3 +63,6 @@ Transform your compute power into real earnings
    ```bash
    npm run start
    ```
+
+### Credit
+https://github.com/Zlkcyber
