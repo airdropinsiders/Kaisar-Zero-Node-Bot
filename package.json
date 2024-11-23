@@ -1,0 +1,36 @@
+{
+  "name": "kaisarzeronode",
+  "version": "1.0.0",
+  "description": "kasiar zero node beta cli version",
+  "main": "main.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node main.js",
+    "register": "node register.js",
+    "setup": "node setup.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/airdropinsiders/KaisarZeroNode-Bot.git"
+  },
+  "keywords": [
+    "kaisar-bot",
+    "kaisar-node",
+    "kaisar-extension",
+    "kaisar-cli"
+  ],
+  "author": "@airdropinsiders",
+  "type": "module",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/airdropinsiders/KaisarZeroNode-Bot/issues"
+  },
+  "homepage": "https://github.com/Zlkcyber/kaisar-bot#readme",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "chalk": "^5.3.0",
+    "crypto": "^1.0.1",
+    "fs": "^0.0.1-security",
+    "https-proxy-agent": "^7.0.5"
+  }
+}
