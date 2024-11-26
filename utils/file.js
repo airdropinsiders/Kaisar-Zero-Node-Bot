@@ -1,35 +1,30 @@
 import fs from 'fs';
 import { logger } from './logger.js';
 
+// Utility function to read and parse a file
+function readFile(filePath) {
+    try {
+        const data = fs.readFileSync(filePath, 'utf-8');
+        return data.split('\n').map(line => line.trim()).filter(line => line !== '');
+    } catch (error) {
+        logger(`Error reading ${filePath}:`, 'error', error.message || error);
+        return [];
+    }
+}
+
+// Function to get tokens from 'tokens.txt'
 function getTokensFromFile() {
-    try {
-        const tokens = fs.readFileSync('tokens.txt', 'utf-8').split('\n').filter(token => token.trim() !== '');
-        return tokens;
-    } catch (error) {
-        logger("Error reading token.txt:", 'error', error.message || error);
-        return [];
-    }
+    return readFile('tokens.txt');
 }
 
+// Function to get IDs from 'id.txt'
 function getIdsFromFile() {
-    try {
-        const ids = fs.readFileSync('id.txt', 'utf-8').split('\n').filter(id => id.trim() !== '');
-        return ids;
-    } catch (error) {
-        logger("Error reading id.txt:", 'error', error.message || error);
-        return [];
-    }
+    return readFile('id.txt');
 }
 
-
+// Function to get proxies from 'proxy.txt'
 function getProxiesFromFile() {
-    try {
-        const proxies = fs.readFileSync('proxy.txt', 'utf-8').split('\n').filter(proxy => proxy.trim() !== '');
-        return proxies;
-    } catch (error) {
-        logger("Error reading proxy.txt:", 'error', error.message || error);
-        return [];
-    }
+    return readFile('proxy.txt');
 }
 
-export { getTokensFromFile as getToken, getIdsFromFile as getId, getProxiesFromFile as getProxy }
+export { getTokensFromFile as getToken, getIdsFromFile as getId, getProxiesFromFile as getProxy };
