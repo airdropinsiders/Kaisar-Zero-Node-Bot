@@ -48,9 +48,15 @@ async function claim(apiClient, extensionId) {
         logger(`[${extensionId}] Claimed successfully:`, 'success', data);
         await startFarming(apiClient, extensionId);
     } catch (error) {
-        logger(`[${extensionId}] Error during claim:`, 'error', error.message || error);
-        //logger(`[${extensionId}] Restarting farming...`)
-        //startFarming(apiClient, extensionId);
+        const errorMessage = error.message || error;
+        logger(`[${extensionId}] Error during claim:`, 'error', errorMessage);
+    
+        if (errorMessage.includes("status code 412")) {
+            logger(`[${extensionId}] Restarting farming...`);
+            await startFarming(apiClient, extensionId);
+        } else {
+            logger(`[${extensionId}] Unhandled error.`, 'error');
+        }
     }
 }
 
