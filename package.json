@@ -7,7 +7,8 @@
   "scripts": {
     "start": "node main.js",
     "register": "node register.js",
-    "setup": "node setup.js"
+    "setup": "node setup.js",
+    "spin": "node spin.js"
   },
   "repository": {
     "type": "git",
